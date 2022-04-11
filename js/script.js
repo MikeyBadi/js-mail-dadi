@@ -8,25 +8,30 @@
 const email = ["mihai@gmail.com", "domenico@gmail.com", "francesco@gmail.com", "ivan@gmail.com"];
 
 // mail inserita
-const userMail = prompt('Inserisci di seguito la tua mail');
-let convalidEmail = false
 
+const loginBtn = document.querySelector('#mb_login')
 const diceStart = document.querySelector("#button_dice");
 
-for (let i=0; i < email.length; i++) {
-  console.log(i,email[i],userMail);
-  if (email[i] === userMail){
-    convalidEmail = true;
-  }
-} 
+loginBtn.addEventListener('click', function(){
+  const userMail = document.getElementById('useremail').value;
+  let convalidEmail = false;
+  
+  
+  for (let i=0; i < email.length; i++) {
+    console.log(i,email[i],userMail);
+    if (email[i] === userMail){
+      convalidEmail = true;
+    }
+  } 
 
-if (convalidEmail){
-  const output= document.getElementById("output_text")
-  document.getElementById("output_text").innerHTML ="Loggato correttamente";
-} else {
-  document.getElementById("output_text").innerHTML ="Registrati per poter accedere";
-  diceStart.style.cssText="display: none;"; 
-}
+  if (convalidEmail){
+    const output= document.getElementById("output_text")
+    document.getElementById("output_text").innerHTML ="Loggato correttamente";
+  } else {
+    document.getElementById("output_text").innerHTML ="Registrati per poter accedere";
+  }
+});
+
 
 // Gioco dei dadi
 // Generare un numero random da 1 a 6, sia per il giocatore sia per il computer.
