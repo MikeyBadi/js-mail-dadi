@@ -11,6 +11,7 @@ const email = ["mihai@gmail.com", "domenico@gmail.com", "francesco@gmail.com", "
 
 const loginBtn = document.querySelector('#mb_login')
 const diceStart = document.querySelector("#button_dice");
+const showBlock = document.querySelector(".mb_dicegame")
 
 loginBtn.addEventListener('click', function(){
   const userMail = document.getElementById('useremail').value;
@@ -18,19 +19,23 @@ loginBtn.addEventListener('click', function(){
   
   
   for (let i=0; i < email.length; i++) {
-    console.log(i,email[i],userMail);
+    console.log (i , email[i] , userMail);
     if (email[i] === userMail){
       convalidEmail = true;
     }
   } 
 
+  const output= document.getElementById("output_text")
+
   if (convalidEmail){
-    const output= document.getElementById("output_text")
-    document.getElementById("output_text").innerHTML ="Loggato correttamente";
+    output.innerHTML ="Benvenuto";
+    showBlock.classList.remove("mb_show");
   } else {
-    document.getElementById("output_text").innerHTML ="Registrati per poter accedere";
+    output.innerHTML ="Registrati per poter accedere";
+    showBlock.classList.add("mb_show");
   }
 });
+
 
 
 // Gioco dei dadi
@@ -41,9 +46,11 @@ console.log(diceStart)
 diceStart.addEventListener('click', function(){
   const player = Math.ceil(Math.random()*6)
   console.log('Player ',player)
+  resulPlayer= document.getElementById("result_player").innerHTML = player;
 
   const comp =Math.ceil(Math.random()*6)
   console.log('Computer',comp)
+  resultComputer= document.getElementById("result_computer").innerHTML = comp;
 
   if(player > comp){
     document.querySelector("#winner").innerHTML ="HAI VINTO!"

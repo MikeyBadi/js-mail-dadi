@@ -1,0 +1,45 @@
+.mb_show{
+  display: none !important;
+}
+
+.mb_logging{
+  background-color: burlywood;
+  border-radius: 10px;
+  margin-top: 40px;
+}
+
+.mb_dicegame{
+  background-color: burlywood;
+  border-radius: 10px;
+  margin-top: 20px;
+  padding-top: 30px;
+}
+
+#mb_login, #button_dice{
+  border: 1px solid rgb(157, 157, 157);
+  padding: 2px 4px;
+  background-color: white;
+  border-radius: 2px;
+}
+
+#button_dice{
+  margin-bottom: 30px;
+}
+
+.mb_columns h1{
+  font-size: 16px;
+}
+
+.mb_columns_numbers{
+  background-color: rgb(180, 116, 31);
+  width: 100px;
+  height: 100px;
+  margin: 20px 50px;
+  border-radius: 5px;
+}
+.mb_columns_numbers p{
+vertical-align: middle;
+ color: white;
+ font-size: 20px;
+ margin: 0;
+}
